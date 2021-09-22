@@ -29,8 +29,8 @@ export class PostComponent implements OnInit {
     this.postData = await this.fetchPost(decoded.split("post/")[1]);
     this.showLoader = false;
     this.postDataBody = this.postData[0].data.children[0];
-    console.log(JSON.stringify(this.postDataBody))
     this.postDataComments = this.postData[1];
+    console.log(JSON.stringify(this.postDataComments))
 
     this.setData()
   }

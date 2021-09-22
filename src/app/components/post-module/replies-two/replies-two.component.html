@@ -6,7 +6,7 @@
                 <div *ngIf="c.kind != 'more'">
                     <p style="margin-left: 20px;margin-bottom: 0;color: darkblue;">{{c.data.author}}</p>
                     <p style="margin-left: 20px;margin-bottom: 0;">{{c.data.body}}</p>
-                    <div *ngIf="c.data.replies != ''">
+                    <div *ngIf="c.data.replies != '' && c.data.replies != undefined && c.data.replies.data.children[0].data.body != undefined">
                         <app-replies-two [nc]="c.data.replies" [i]="c.data.author + c.data.body + j"></app-replies-two>
                     </div>
                 </div>

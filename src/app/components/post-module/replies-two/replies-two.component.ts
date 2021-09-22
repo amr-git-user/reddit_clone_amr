@@ -15,8 +15,8 @@ export class RepliesTwoComponent implements OnInit {
   }
 
   replytoggle(toggle, index) {
-    console.log(toggle)
-    console.log(index)
+    // console.log(toggle)
+    // console.log(index)
     if (toggle == 'show') {
       let x = document.getElementById("comment-index-r2-" + index) as HTMLDivElement;
       x.classList.remove("no-disp");
