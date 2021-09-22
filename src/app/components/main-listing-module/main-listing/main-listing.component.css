@@ -1,0 +1,62 @@
+@import url("../../../../assets/css/animation.css");
+.listing-body {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.listing-body-tags {
+    text-align: center;
+}
+
+.post-body {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.post-body>div {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    /* padding: 10px; */
+    /* height: 450px; */
+}
+
+.desc {
+    /* height: 100px; */
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+img {
+    width: 100%;
+    height: 300px!important;
+}
+
+.btn-tags {
+    background: transparent;
+    border: none;
+    outline: none;
+    /* width: 100px; */
+    /* text-decoration: underline; */
+    text-align: left;
+}
+
+.btn-tags:hover {
+    background: black;
+    color: white;
+}
+
+.selected {
+    background: black;
+    color: white;
+}
+
+@media screen and (max-width: 400px) {
+    .listing-body {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

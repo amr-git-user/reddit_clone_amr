@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.no-disp {
+    display: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(128, 128, 128, .2);
+}

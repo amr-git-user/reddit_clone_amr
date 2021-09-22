@@ -1,0 +1,36 @@
+<div class="listing-body">
+    <div class="listing-body-tags my-2">
+        <button class="btn-tags mx-1 ml-0 top" (click)="changeListing('top')">TOP</button>
+        <button class="btn-tags mx-1 ml-0 hot" (click)="changeListing('hot')">HOT</button>
+        <button class="btn-tags mx-1 ml-0 new" (click)="changeListing('new')">NEW</button>
+    </div>
+    <div class="listing-body-posts row my-4" *ngIf="!showLoader">
+        <h3 class="text-center my-4">{{heading}}</h3>
+        <div *ngFor="let x of displayList" class="post-body col-3">
+            <div class="card" style="width: 18rem;">
+                <img *ngIf="x.data.thumbnail != 'default'" [src]="x.data.thumbnail" class="card-img-top" alt="...">
+                <div *ngIf="x.data.thumbnail == 'default'" style="margin-top: 10px;">
+                    <a href="{{x.data.url_overridden_by_dest}}">{{x.data.url_overridden_by_dest}}</a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title desc">{{truncateString(x.data.title)}}</h5>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <button (click)="gotoPost(x.data.permalink)" *ngIf="x.data.post_hint != 'link'" class="btn-tags">Go To Post >></button>
+                    <button (click)="gotoLink(x.data.url_overridden_by_dest)" *ngIf="x.data.post_hint == 'link'" class="btn-tags">Go To Link >></button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="displayList.length == 0 || displayList == undefined || displayList == null || displayList == []">
+            <h3>Looks like there were some issues while fetching data...</h3>
+            <h3>Please try again in some time.</h3>
+        </div>
+    </div>
+
+    <div *ngIf="showLoader">
+        Loading..<span class="ani-disappear">.</span>
+        <!-- <mat-spinner></mat-spinner> -->
+        <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
+    </div>
+
+</div>

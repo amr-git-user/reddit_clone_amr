@@ -1,0 +1,40 @@
+<div class="post-body">
+    <div *ngIf="!showLoader">
+
+        <div class="post-body-main">
+            <h3 class="my-3">{{ title }}</h3>
+            <img *ngIf="postDataBody.data.secure_media == null" [src]="image" style="max-width: 100%;" alt="">
+
+            <video *ngIf="postDataBody.data.secure_media != null" width="540" height="310" controls>
+                <source [src]="image    " type="video/mp4">
+            </video>
+
+            <div style="margin-top: 10px;">
+                <p style="margin: 0;">Author: <span class="clickable" (click)="userClick(postDataBody.data.author)">u/{{postDataBody.data.author}}</span></p>
+                <p style="margin: 0;">Posted In: <span class="clickable" (click)="subredditClick(postDataBody.data.subreddit)">r/{{postDataBody.data.subreddit}}</span></p>
+                <p style="margin-bottom: 0;">Awards</p>
+                <div>
+                    <span *ngFor="let a of postDataBody.data.all_awardings" style="border: 1px solid black;padding: 5px;margin:5px;border-radius: 30px;">
+                        <img [src]="a.icon_url" style="margin: 5px;" width="30px" height="30px" alt="">
+                        {{a.count > 1 ? a.count : ""}}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="psot-body-comments">
+            {{postDataComments?.data.children.length == 0 ? "Wow, Such Empty." : ""}}
+            <div *ngFor="let c of postDataComments?.data.children; let i = index;" class="my-4">
+                <p style="margin-bottom: 0;text-decoration: underline;color: darkblue;font-size: 14px;">{{c.data.author}}</p>
+                <p style="font-size: 16px;margin-bottom: 0;">{{c.data.body}}</p>
+                <div *ngIf="c.data.replies != '' && c.data.replies != undefined">
+                    <app-replies [nc]="c.data.replies" [i]="c.data.author + c.data.body + i"></app-replies>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showLoader">
+        Loading..<span class="ani-disappear">.</span>
+    </div>
+
+</div>

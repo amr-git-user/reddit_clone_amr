@@ -1,0 +1,17 @@
+<div style="margin-left: 20px;">
+    <button class="btn-expand" *ngIf="nc != '' && nc.data.children.length > 0" [attr.id]="'show-r2-' + i" (click)="replytoggle('show', i)">Show Replies</button>
+    <div [attr.id]="'comment-index-r2-' + i" class="no-disp">
+        <div class="replies">
+            <div *ngFor="let c of nc.data.children; let j = index;" class="my-2">
+                <div *ngIf="c.kind != 'more'">
+                    <p style="margin-left: 20px;margin-bottom: 0;text-decoration: underline;color: darkblue;">{{c.data.author}}</p>
+                    <p style="margin-left: 20px;margin-bottom: 0;">{{c.data.body}}</p>
+                    <div *ngIf="c.data.replies != ''">
+                        <app-replies-two [nc]="c.data.replies" [i]="c.data.author + c.data.body + j"></app-replies-two>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-expand" (click)="replytoggle('hide', i)">Hide Replies</button>
+    </div>
+</div>

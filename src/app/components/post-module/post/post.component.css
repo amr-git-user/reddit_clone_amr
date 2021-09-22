@@ -1,0 +1,32 @@
+@import url("../../../../assets/css/animation.css");
+.post-body {
+    width: 60%;
+    margin: 80px auto;
+}
+
+.post-body-main {
+    width: 100%;
+    text-align: center;
+    background: white;
+    /* height: 500px; */
+}
+
+.psot-body-comments {
+    border: 1px solid rgba(128, 128, 128, .2);
+    padding: 10px;
+    margin: 25px auto;
+    border-radius: 5px;
+    background: white;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 400px) {
+    .post-body {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
