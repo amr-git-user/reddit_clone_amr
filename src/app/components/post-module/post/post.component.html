@@ -24,10 +24,10 @@
         </div>
         <div class="psot-body-comments">
             {{postDataComments?.data.children.length == 0 ? "Wow, Such Empty." : ""}}
-            <div *ngFor="let c of postDataComments?.data.children; let i = index;" class="my-4">
-                <p style="margin-bottom: 0;text-decoration: underline;color: darkblue;font-size: 14px;">{{c.data.author}}</p>
+            <div *ngFor="let c of postDataComments?.data.children; let i = index;" class="my-4" style="border-bottom: 1px solid rgba(128,128,128,0.4);">
+                <p style="margin-bottom: 0;color: darkblue;font-size: 14px;font-weight: 600;">{{c.data.author}}</p>
                 <p style="font-size: 16px;margin-bottom: 0;">{{c.data.body}}</p>
-                <div *ngIf="c.data.replies != '' && c.data.replies != undefined">
+                <div *ngIf="c.data.replies != '' && c.data.replies != undefined" style="margin: 10px 0 10px 0;margin-left: -20px">
                     <app-replies [nc]="c.data.replies" [i]="c.data.author + c.data.body + i"></app-replies>
                 </div>
             </div>

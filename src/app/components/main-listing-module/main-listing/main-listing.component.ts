@@ -84,9 +84,17 @@ export class MainListingComponent implements OnInit {
     });
   }
 
-  gotoPost(url) {
-    this.service.postURL = url;
-    this.router.navigate(['/post/', url])
+  // gotoPost(url) {
+  //   this.service.postURL = url;
+  //   this.router.navigate(['/post/', url])
+  // }
+
+  goToPost(data) {
+    if (data.post_hint != 'link') {
+      this.router.navigate(['/post/', data.permalink])
+    } else {
+      this.gotoLink(data.url_overridden_by_dest);
+    }
   }
 
   truncateString(str) {

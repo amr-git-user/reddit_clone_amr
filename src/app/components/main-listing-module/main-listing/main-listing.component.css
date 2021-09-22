@@ -19,7 +19,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     /* padding: 10px; */
-    /* height: 450px; */
+    height: 450px;
 }
 
 .desc {
@@ -52,6 +52,15 @@ img {
 .selected {
     background: black;
     color: white;
+}
+
+.card {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 @media screen and (max-width: 1450px) {

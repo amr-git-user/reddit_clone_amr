@@ -2,5 +2,8 @@
     background: transparent;
     border: none;
     outline: none;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-left: none;
+    color: rgba(0, 0, 0, 0.6);
 }
