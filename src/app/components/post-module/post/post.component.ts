@@ -9,7 +9,10 @@ import { MainServiceService } from '../../../services/main-service.service'
 })
 export class PostComponent implements OnInit {
 
-  constructor(private service: MainServiceService, private actroute: ActivatedRoute, private router: Router) { }
+  constructor(private service: MainServiceService, private actroute: ActivatedRoute, private router: Router) {
+    
+    window.scrollTo(0,0);
+  }
 
   postData: any;
   postDataBody: any;

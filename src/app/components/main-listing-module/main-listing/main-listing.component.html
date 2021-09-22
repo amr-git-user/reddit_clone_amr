@@ -6,7 +6,7 @@
     </div>
     <div class="listing-body-posts row my-4" *ngIf="!showLoader">
         <h3 class="text-center my-4">{{heading}}</h3>
-        <div *ngFor="let x of displayList" class="post-body col-3">
+        <div *ngFor="let x of displayList" class="post-body col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
             <div class="card" style="width: 18rem;">
                 <img *ngIf="x.data.thumbnail != 'default'" [src]="x.data.thumbnail" class="card-img-top" alt="...">
                 <div *ngIf="x.data.thumbnail == 'default'" style="margin-top: 10px;">
@@ -27,10 +27,8 @@
         </div>
     </div>
 
-    <div *ngIf="showLoader">
-        Loading..<span class="ani-disappear">.</span>
-        <!-- <mat-spinner></mat-spinner> -->
-        <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
+    <div *ngIf="showLoader" style="text-align: center;margin-top: 10%;">
+        <h3>Loading..<span class="ani-disappear">.</span></h3>
     </div>
 
 </div>

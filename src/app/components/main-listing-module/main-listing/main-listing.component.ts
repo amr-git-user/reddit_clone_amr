@@ -12,13 +12,16 @@ export class MainListingComponent implements OnInit {
 
   
 
-  constructor(private router: Router, private service: MainServiceService) { }
+  constructor(private router: Router, private service: MainServiceService) {
+    window.scrollTo(0,0);
+  }
 
   displayList = [];
   showLoader: boolean = false;
   heading: any;
 
   async ngOnInit() {
+    
     // this.showLoader = true;
     // this.displayList = await this.getListing("all/top");
     this.changeListing('top');

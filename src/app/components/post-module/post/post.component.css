@@ -24,9 +24,16 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1100px) {
+    .post-body {
+        width: 80%;
+        margin: 80px auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .post-body {
         width: 90%;
-        margin: 0 auto;
+        margin: 80px auto;
     }
 }
