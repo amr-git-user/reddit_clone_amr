@@ -10,7 +10,7 @@ import { MainServiceService } from '../../../services/main-service.service'
 export class PostComponent implements OnInit {
 
   constructor(private service: MainServiceService, private actroute: ActivatedRoute, private router: Router) {
-    
+    // scrolling to top
     window.scrollTo(0,0);
   }
 
